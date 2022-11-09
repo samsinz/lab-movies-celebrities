@@ -1,0 +1,19 @@
+<h2>Create your own movie</h2>
+
+<form action="/movies/create" method="POST">
+
+  <input type="text" name="title" placeholder="Title" />
+  <input type="text" name="genre" placeholder="Genre" />
+  <input type="text" name="plot" placeholder="Plot" />
+
+  <label for="cast">Choose celebrities:</label>
+
+  <select name="cast" id="cast" multiple>
+    {{#each allCelebrities}}
+      <option value="{{this._id}}">{{this.name}}, {{this.occupation}}</option>
+    {{/each}}
+  </select>
+
+  <button>Create a new movie</button>
+
+</form>
